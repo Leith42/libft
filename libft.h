@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:15:38 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 14:20:19 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/09 19:19:50 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ char    *ft_strnew(size_t size);
 void    ft_strclr(char *s);
 void    ft_striter(char *s, void (*f)(char *));
 void    ft_striteri(char *s, void (*f)(unsigned int, char *));
+char    *ft_strmap(char const *s, char (*f)(char));
+char    *ft_strmapi(char const *s, char(*f)(unsigned int, char));
+int      ft_strequ(char const *s1, char const *s2);
+int      ft_strnequ(char const *s1, char const *s2, size_t n);
+char    *ft_strsub(char const *s, unsigned int start, size_t len);
+
 #endif

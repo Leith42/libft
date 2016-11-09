@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 13:17:17 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 15:46:24 by aazri            ###   ########.fr       */
+/*   Created: 2016/11/09 16:25:28 by aazri             #+#    #+#             */
+/*   Updated: 2016/11/09 16:42:43 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char *))
+int    ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-    size_t i;
+    char *str1;
+    char *str2;
 
-    i = 0;
-    while(s != NULL && s[i])
+    str1 = (char *)s1;
+    str2 = (char *)s2;
+    if(str1 && str2)
     {
-        f(i, &s[i]);
-        i++;
+        if(ft_strncmp(s1, s2, n) == 0)
+            return (1);
+        else
+            return (0);
     }
+    return (0);
 }
