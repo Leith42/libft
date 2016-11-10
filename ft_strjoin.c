@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 23:18:33 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/10 13:39:18 by aazri            ###   ########.fr       */
+/*   Created: 2016/11/10 13:29:00 by aazri             #+#    #+#             */
+/*   Updated: 2016/11/10 14:07:04 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*buffDest;
-	char	*buffSrc;
+    char *ret;
 
-	buffDest = dest;
-	buffSrc = (char *)src;
-	while (*buffDest != '\0')
-		buffDest++;
-	while (*buffSrc != '\0')
-	{
-		*buffDest = *buffSrc;
-		buffDest++;
-		buffSrc++;
-	}
-	*buffDest = '\0';
-	return (dest);
+    ret = (char *)malloc(sizeof(*ret) * ft_strlen(s1) + ft_strlen(s2) + 1);
+    if (ret == NULL)
+        return (NULL);
+    ft_strcpy(ret, s1);
+    ft_strcat(ret, s2);
+    return (ret);
 }

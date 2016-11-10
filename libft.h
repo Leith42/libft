@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:15:38 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 19:19:50 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/10 15:21:01 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ char    *ft_strmapi(char const *s, char(*f)(unsigned int, char));
 int      ft_strequ(char const *s1, char const *s2);
 int      ft_strnequ(char const *s1, char const *s2, size_t n);
 char    *ft_strsub(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_strtrim(char const *s);
 
 #endif
