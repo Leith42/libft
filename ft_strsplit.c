@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:21:57 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/10 18:10:22 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/10 18:52:41 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ size_t    ft_wordlen(char const *s, char c)
     }
     return (len);
 }
+
 char    **ft_strsplit(char const *s, char c)
 {
     size_t i;
@@ -75,17 +76,4 @@ char    **ft_strsplit(char const *s, char c)
             tab[i][k] = '\0';
         }
     return (tab);
-}
-
-int main(int argc, char const *argv[])
-{
-    size_t i = 0;
-    char str[80] = "***Je*Suis*Une*String**Top*Kek";
-    char **tab = (ft_strsplit(str, '*'));
-    while (tab)
-    {
-        puts(tab[i]);
-        i++;
-    }
-    return 0;
 }
