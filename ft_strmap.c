@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:19:25 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/11 15:13:29 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/11 20:58:51 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 char    *ft_strmap(char const *s, char (*f)(char))
 {
-    char *str;
     size_t i;
+    char *str;
 
     i = 0;
-    if (s && f)
+    str = (char *)malloc(ft_strlen(s) + 1);
+    if (s && f && str)
     {
-        str = (char *)malloc(sizeof(str) * ft_strlen(s));
         while(i < ft_strlen(s))
         {
-            str[i] = f(str[i]);
+            str[i] = f(s[i]);
             i++;
         }
+        str[i] = '\0';
         return (str);
     }
     return (NULL);

@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:09:54 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/10 15:18:44 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/11 21:01:32 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char *ft_strtrim(char const *s)
         i++;
     while(s[len] == ' ' || s[len] == '\t' || s[len] == '\n')
         len--;
-    str = malloc(sizeof(*str) * (len - i) + 1);
+    str = malloc(len - i + 1);
     if(str == NULL)
         return (NULL);
     while(i < len)
