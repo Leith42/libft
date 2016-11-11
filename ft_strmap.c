@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 15:19:25 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 15:47:02 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/11 15:13:29 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,4 @@ char    *ft_strmap(char const *s, char (*f)(char))
         return (str);
     }
     return (NULL);
-}
-
-char func(char s)
-{
-    s = 'z';
-    return (s);
-}
-
-int main(int argc, char const *argv[])
-{
-    char *str = NULL;
-    char (*kek)(char) = &func;
-    puts(ft_strmap(str, kek));
-    return 0;
 }

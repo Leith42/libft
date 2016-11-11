@@ -6,22 +6,19 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 23:11:12 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/05 23:19:29 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/11 16:40:49 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 char    *ft_strchr(const char *str, int letter)
 {
-    int i;
-
-    i = 0;
-    while(str[i])
+    while(*str)
     {
-        if(str[i] == letter)
-            return ((char *)&str[i]);
-        i++;
+        if(*str == letter)
+            return ((char *)str);
+        str++;
     }
-    return (NULL);
+    if(*str == letter)
+        return ((char *)str);
+    return (0);
 }

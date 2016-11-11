@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:15:38 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/10 22:49:34 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/11 14:49:01 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int     ft_atoi(const char *str);
 int     ft_strcmp(const char *str1, const char *str2);
 int     ft_strncmp(const char *str1, const char *str2, size_t num);
 char    *ft_strstr(const char *str, const char *find);
+char    *ft_strnstr(const char *str, const char *find, size_t len);
 size_t  ft_strlen(const char *str);
 char    *ft_strrchr (const char *str, int letter);
 char    *ft_strchr (const char *str, int letter);
@@ -44,6 +45,7 @@ void    *ft_memcpy(void *dest, const void *src, size_t n);
 void    *ft_memmove (void *dest, const void *src, size_t num);
 char    *ft_strncpy(char *dest, const char *src, size_t num);
 //PART 2
+void    ft_strdel(char **as);
 void    *ft_memalloc(size_t size);
 void    ft_memdel(void **ap);
 char    *ft_strnew(size_t size);

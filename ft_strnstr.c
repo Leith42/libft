@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:39:29 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/11 15:51:48 by aazri            ###   ########.fr       */
+/*   Created: 2016/11/11 14:27:35 by aazri             #+#    #+#             */
+/*   Updated: 2016/11/11 18:12:08 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memccpy(void *dest, const void *src, int c, size_t n)
+char    *ft_strnstr(const char *str, const char *find, size_t len)
 {
-    size_t          i;
-    char   *des;
-    char   *sr;
+    size_t		i;
+    size_t		j;
+    size_t		c;
 
     i = 0;
-    des = (char *)dest;
-    sr = (char *)src;
-    while (i < n)
+    c = 0;
+	if (*find == '\0')
+        return (char*)(str);
+    while (i < len && str[i])
     {
-        if ((*des++ = *sr++) == c)
-            return (des);
-        i++;
+    	j = i;
+    	c = 0;
+    	while (str[j] == find[c] && j < len)
+    	{
+    		j++;
+			c++;
+            if (find[c] == '\0')
+    		      return (char*)(&str[i]);
+    	}
+    	i++;
     }
     return (NULL);
 }

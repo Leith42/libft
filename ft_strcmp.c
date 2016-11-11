@@ -6,16 +6,18 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:52:25 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/05 17:56:27 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/11 18:25:02 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp(const char *str1, const char *str2)
-{
-    int i;
+#include "libft.h"
 
-    i = 0;
-    while (str1[i] && str2[i] && str1[i] == str2[i])
-        i++;
-    return (str1[i] - str2[i]);
+int    ft_strcmp(const char *str1, const char *str2)
+{
+    while (*str1 && *str1 == *str2)
+    {
+        str1++;
+        str2++;
+    }
+    return ((unsigned char)*str1 - (unsigned char)*str2);
 }
