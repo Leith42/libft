@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 20:19:45 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/11 18:13:27 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/12 17:15:26 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strstr(const char *str, const char *find)
 	c = 0;
 	if (*find == '\0')
 		return (char*)(str);
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		j = i;
 		c = 0;

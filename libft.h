@@ -6,14 +6,18 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:15:38 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/11 14:49:01 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/12 17:31:57 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
+#ifndef NULL
+# define NULL 0
+#endif
+
+typedef unsigned long size_t;
 
 //PART 1
 void    ft_bzero(void *ptr, size_t n);
