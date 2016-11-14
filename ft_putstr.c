@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 19:37:30 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/12 19:37:40 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/14 15:54:29 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ft_putstr(char *str)
     int i;
 
     i = 0;
-    while (str[i])
+    while (str && str[i])
     {
         ft_putchar(str[i]);
         i++;

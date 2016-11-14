@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 22:24:16 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/10 22:26:21 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/14 15:53:14 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void ft_putendl(char const *s)
 {
-    ft_putstr((char *)s);
+    if (s)
+        ft_putstr((char *)s);
     ft_putchar('\n');
 }

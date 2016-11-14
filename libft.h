@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:15:38 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/12 17:31:57 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/14 17:34:16 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int     ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *str, int tofind, size_t n);
 void    *ft_memset(void *ptr, int value, size_t n);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
-void    *ft_memmove (void *dest, const void *src, size_t num);
+void    *ft_memmove (void *dest, const void *src, size_t n);
 char    *ft_strncpy(char *dest, const char *src, size_t num);
 //PART 2
 void    ft_strdel(char **as);
@@ -70,7 +70,8 @@ void    ft_putchar(char c);
 void    ft_putnbr(int n);
 void    ft_putchar_fd(char c, int fd);
 void    ft_putstr_fd(char const *s, int fd);
-void    ft_putnbr_fd(int n, int fd);
+void    ft_putnbr_fd(int nb, int fd);
 void    ft_putendl_fd(char const *s, int fd);
+char	*ft_itoa(int n);
 
 #endif
