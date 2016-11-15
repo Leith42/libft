@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/14 17:28:10 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/15 11:43:41 by aazri            ###   ########.fr       */
+/*   Created: 2016/11/15 14:45:22 by aazri             #+#    #+#             */
+/*   Updated: 2016/11/15 15:01:14 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-
-char		*ft_itoa(int n)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	char	buff[22];
-	char	*str;
-	int		i;
-	int		n_tmp;
-
-	i = 0;
-	n_tmp = n;
-	if (n == -2147483648)
-		return ("-2147483648");
-	if (n < 0)
-		n_tmp = -n;
-	while (n_tmp > 0)
-	{
-		buff[i++] = n_tmp % 10 + '0';
-		n_tmp = n_tmp / 10;
-	}
-	if (n < 0)
-		buff[i++] = '-';
-	str = (char *)ft_memalloc(i + 1);
-	if (n == 0)
-		str[0] = '0';
-	while (--i >= 0)
-		str[n_tmp++] = buff[i];
-	return (str);
+	del(&((*alst)->content), (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }
