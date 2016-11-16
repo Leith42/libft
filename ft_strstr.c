@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 20:19:45 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/12 17:15:26 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 20:47:51 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strstr(const char *str, const char *find)
 {
-    size_t  i;
-	size_t  j;
+	size_t	i;
+	size_t	j;
 	size_t	c;
 
 	i = 0;

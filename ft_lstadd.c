@@ -6,17 +6,17 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 15:09:19 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/15 15:18:50 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 19:28:20 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-    if (alst && new)
-    {
-        new->next = *alst;
-        *alst = new;
-    }
+	if (alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

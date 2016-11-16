@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 23:18:33 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/10 13:39:18 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 20:28:43 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	*ft_strcat(char *dest, const char *src)
 {
-	char	*buffDest;
-	char	*buffSrc;
+	char *buffdest;
+	char *buffsrc;
 
-	buffDest = dest;
-	buffSrc = (char *)src;
-	while (*buffDest != '\0')
-		buffDest++;
-	while (*buffSrc != '\0')
+	buffdest = dest;
+	buffsrc = (char *)src;
+	while (*buffdest != '\0')
+		buffdest++;
+	while (*buffsrc != '\0')
 	{
-		*buffDest = *buffSrc;
-		buffDest++;
-		buffSrc++;
+		*buffdest = *buffsrc;
+		buffdest++;
+		buffsrc++;
 	}
-	*buffDest = '\0';
+	*buffdest = '\0';
 	return (dest);
 }

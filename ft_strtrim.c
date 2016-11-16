@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 11:06:49 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/16 18:48:11 by aazri            ###   ########.fr       */
+/*   Created: 2016/11/16 20:50:45 by aazri             #+#    #+#             */
+/*   Updated: 2016/11/16 20:50:46 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 static char	*ft_fill(size_t i, size_t len, char *buff, char const *s)
@@ -33,9 +32,9 @@ static char	*ft_fill(size_t i, size_t len, char *buff, char const *s)
 
 char	*ft_strtrim(char const *s)
 {
-	size_t		i;
-	size_t		len;
-	char        *buff;
+	size_t	i;
+	size_t	len;
+	char	*buff;
 
 	if (s)
 	{
@@ -46,8 +45,8 @@ char	*ft_strtrim(char const *s)
 		if (i == len + 1)
 			return ("");
 		buff = (char *)malloc(sizeof(char) * (len - i + 1));
-        if (!buff)
-            return (NULL);
+		if (!buff)
+			return (NULL);
 		while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
 			len--;
 		return (ft_fill(i, len, buff, s));

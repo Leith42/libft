@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:49:22 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 11:53:08 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 20:30:29 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
-    ft_memdel((void **)as);
+	ft_memdel((void **)as);
 }

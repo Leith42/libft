@@ -6,14 +6,14 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:59:23 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 12:12:35 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 20:29:41 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
-    if (s)
-        ft_bzero(s, ft_strlen(s));
+	if (s)
+		ft_bzero(s, ft_strlen(s));
 }

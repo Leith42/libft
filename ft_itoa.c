@@ -6,14 +6,14 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 17:28:10 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/16 18:45:00 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 19:28:03 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	buff[12];
 	char	*str;
@@ -23,7 +23,7 @@ char		*ft_itoa(int n)
 	i = 0;
 	n_tmp = n;
 	if (n == -2147483648)
-		return(ft_strdup("-2147483648"));
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 		n_tmp = -n;
 	while (n_tmp)
@@ -33,8 +33,7 @@ char		*ft_itoa(int n)
 	}
 	if (n < 0)
 		buff[i++] = '-';
-	str = (char *)ft_memalloc(i + 1);
-	if(!str)
+	if (!(str = (char *)ft_memalloc(i + 1)))
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';
