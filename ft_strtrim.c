@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/10 14:09:54 by aazri             #+#    #+#             */
-<<<<<<< Updated upstream
-/*   Updated: 2016/11/14 17:18:36 by aazri            ###   ########.fr       */
-=======
-/*   Updated: 2016/11/13 15:13:19 by aazri            ###   ########.fr       */
->>>>>>> Stashed changes
+/*   Created: 2016/11/16 11:06:49 by aazri             #+#    #+#             */
+/*   Updated: 2016/11/16 18:48:11 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +14,7 @@
 #include <stdio.h>
 #include "libft.h"
 
-char	*ft_fill(size_t i, size_t len, char *buff, char const *s)
+static char	*ft_fill(size_t i, size_t len, char *buff, char const *s)
 {
 	size_t b;
 

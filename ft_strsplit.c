@@ -6,15 +6,16 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 15:21:57 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/14 15:17:44 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 18:47:23 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
-size_t  ft_countwords(char const *s, char c)
+static size_t  ft_countwords(char const *s, char c)
 {
     size_t i;
     size_t words;
@@ -29,12 +30,12 @@ size_t  ft_countwords(char const *s, char c)
             i++;
         words++;
     }
-    if(s[i - 1] == c)
+    if(s[i - 1] == c && words >= 1)
         words--;
     return (words);
 }
 
-size_t    ft_wordlen(char const *s, char c)
+static size_t    ft_wordlen(char const *s, char c)
 {
     size_t i;
     size_t len;
@@ -61,11 +62,17 @@ char    **ft_strsplit(char const *s, char c)
     size_t k;
     char **tab;
 
-    if (!s || !(tab = (char **)malloc(sizeof(*tab) * (ft_countwords(s, c)))))
+    if (!s || !(tab = (char **)malloc(sizeof(*tab) * (ft_countwords(s, c) + 1))))
 		return (NULL);
-    i = -1;
+    i = 0;
     j = 0;
-    while (++i < ft_countwords(s, c))
+
+    if(ft_wordlen(&s[j], c) == 0)
+    {
+        tab[i] = NULL;
+        return (tab);
+    }
+    while (i < ft_countwords(s, c))
     {
         k = 0;
         if (!(tab[i] = ft_strnew(ft_wordlen(&s[j], c) + 1)))
@@ -75,6 +82,8 @@ char    **ft_strsplit(char const *s, char c)
         while (s[j] != c && s[j])
             tab[i][k++] = s[j++];
         tab[i][k] = '\0';
+        i++;
     }
+    tab[i] = NULL;
     return (tab);
 }

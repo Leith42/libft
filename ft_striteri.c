@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:17:17 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/09 15:46:24 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/16 18:50:06 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    ft_striteri(char *s, void (*f)(unsigned int, char *))
     size_t i;
 
     i = 0;
-    while(s != NULL && s[i])
+    while(s && s[i])
     {
         f(i, &s[i]);
         i++;
