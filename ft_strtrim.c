@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 20:50:45 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/16 20:50:46 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/17 17:32:38 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*ft_fill(size_t i, size_t len, char *buff, char const *s)
 	return (buff);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	size_t	i;
 	size_t	len;

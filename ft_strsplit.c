@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 16:34:49 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/17 16:37:23 by aazri            ###   ########.fr       */
+/*   Updated: 2016/11/17 17:32:24 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static size_t	ft_wordlen(char const *s, char c)
 	return (len);
 }
 
-static char	**ft_filltab(char const *s, char c, char **tab)
+static char		**ft_filltab(char const *s, char c, char **tab)
 {
 	size_t	i;
 	size_t	j;
@@ -77,7 +77,7 @@ static char	**ft_filltab(char const *s, char c, char **tab)
 	return (tab);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char **tab;
 
