@@ -32,7 +32,7 @@ ft_strndup.c ft_sqroot.c
 
 OBJ = $(SRC:.c=.o)
 
-$(NAME): libft.h
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
