@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 16:34:49 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/17 17:32:24 by aazri            ###   ########.fr       */
+/*   Updated: 2017/03/24 17:16:02 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char			**ft_strsplit(char const *s, char c)
 	char **tab;
 
 	if (!s ||
-		!(tab = (char **)malloc(sizeof(*tab) * (ft_countwords(s, c) + 1))))
+		!(tab = malloc(sizeof(*tab) * (ft_countwords(s, c) + 1))))
 		return (NULL);
 	if (ft_wordlen(&s[0], c) == 0)
 	{

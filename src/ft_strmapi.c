@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/14 17:28:10 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/16 19:28:03 by aazri            ###   ########.fr       */
+/*   Created: 2016/11/09 15:49:33 by aazri             #+#    #+#             */
+/*   Updated: 2017/03/24 17:16:18 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	buff[12];
+	size_t	i;
 	char	*str;
-	int		i;
-	int		n_tmp;
 
 	i = 0;
-	n_tmp = n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n < 0)
-		n_tmp = -n;
-	while (n_tmp)
+	if (s)
+		str = malloc(ft_strlen(s) + 1);
+	if (s && f && str)
 	{
-		buff[i++] = n_tmp % 10 + '0';
-		n_tmp = n_tmp / 10;
+		while (i < ft_strlen(s))
+		{
+			str[i] = f(i, s[i]);
+			i++;
+		}
+		str[i] = '\0';
+		return (str);
 	}
-	if (n < 0)
-		buff[i++] = '-';
-	if (!(str = (char *)ft_memalloc(i + 1)))
-		return (NULL);
-	if (n == 0)
-		str[0] = '0';
-	while (--i >= 0)
-		str[n_tmp++] = buff[i];
-	return (str);
+	return (NULL);
 }

@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_utoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/10 13:29:00 by aazri             #+#    #+#             */
-/*   Updated: 2016/12/19 17:22:01 by aazri            ###   ########.fr       */
+/*   Created: 2017/01/31 18:30:17 by aazri             #+#    #+#             */
+/*   Updated: 2017/03/24 14:52:13 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_utoa_base(uintmax_t n, unsigned int base)
 {
-	char *ret;
+	char		buff[24];
+	char		*str;
+	int			i;
+	uintmax_t	n_tmp;
 
-	if (s1 && s2)
+	i = 0;
+	n_tmp = n;
+	while (n_tmp)
 	{
-		if(!(ret = (char *)malloc(sizeof(*ret) * ft_strlen(s1) + ft_strlen(s2) + 1)))
-			return (NULL);
-		ft_strcpy(ret, s1);
-		ft_strcat(ret, s2);
-		return (ret);
+		buff[i++] = n_tmp % base + '0';
+		n_tmp = n_tmp / base;
 	}
-	return (NULL);
+	if (!(str = ft_memalloc(i + 1)))
+		return (NULL);
+	if (n == 0)
+		str[0] = '0';
+	while (--i >= 0)
+		str[n_tmp++] = buff[i];
+	return (str);
 }

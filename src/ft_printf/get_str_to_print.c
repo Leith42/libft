@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   get_str_to_print.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 11:46:12 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/16 20:20:20 by aazri            ###   ########.fr       */
+/*   Created: 2017/03/09 14:09:29 by aazri             #+#    #+#             */
+/*   Updated: 2017/03/17 16:51:45 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+char	*get_str_to_print(char *hex, char specifier)
 {
-	t_list	*new;
+	char *str;
 
-	if ((new = (t_list *)malloc(sizeof(*new))) == NULL)
-		return (NULL);
-	if (content)
+	if ((str = malloc(sizeof(char))) == NULL)
 	{
-		if ((new->content = malloc(content_size)) == NULL)
+		return (NULL);
+	}
+	if (specifier == 'x' || specifier == 'p')
+	{
+		if ((str = ft_strjoin(str, ft_strtolower(hex))) == NULL)
 		{
-			free(new);
 			return (NULL);
 		}
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
 	}
-	else
+	else if (specifier == 'X')
 	{
-		new->content = NULL;
-		new->content_size = 0;
+		if ((str = ft_strjoin(str, hex)) == NULL)
+		{
+			return (NULL);
+		}
 	}
-	new->next = NULL;
-	return (new);
+	return (str);
 }

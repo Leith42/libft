@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 16:45:00 by aazri             #+#    #+#             */
-/*   Updated: 2016/11/16 20:48:30 by aazri            ###   ########.fr       */
+/*   Created: 2017/01/30 18:08:31 by aazri             #+#    #+#             */
+/*   Updated: 2017/03/24 14:52:15 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_itoa_base(intmax_t n, unsigned int base)
 {
+	char	buff[24];
 	char	*str;
-	size_t	i;
+	int		i;
+	intmax_t	n_tmp;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str && s)
+	n_tmp = n;
+	if (n < 0)
+		n_tmp = -n;
+	while (n_tmp)
 	{
-		while (i < len && s[start])
-		{
-			str[i] = s[start];
-			start++;
-			i++;
-		}
-		str[i] = '\0';
-		return (str);
+		buff[i++] = n_tmp % base + '0';
+		n_tmp = n_tmp / base;
 	}
-	return (NULL);
+	if (n < 0)
+		buff[i++] = '-';
+	if (!(str = ft_memalloc(i + 1)))
+		return (NULL);
+	if (n == 0)
+		str[0] = '0';
+	while (--i >= 0)
+		str[n_tmp++] = buff[i];
+	return (str);
 }
