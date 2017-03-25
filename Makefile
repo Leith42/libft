@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/03/24 16:49:28 by aazri            ###   ########.fr        #
+#    Updated: 2017/03/25 14:53:24 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,7 @@ EXTRA_SRC = \
 		$(EXTRA_PATH)ft_putulnbr.c \
 		$(EXTRA_PATH)ft_itoa_base.c \
 		$(EXTRA_PATH)ft_utoa_base.c \
+		$(EXTRA_PATH)ft_putnstr.c \
 
 GNL_SRC = \
 		$(GNL_PATH)get_next_line.c \
