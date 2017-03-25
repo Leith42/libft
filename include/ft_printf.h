@@ -6,7 +6,7 @@
 /*   By: leith <leith@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 17:22:19 by leith             #+#    #+#             */
-/*   Updated: 2017/03/24 17:11:24 by aazri            ###   ########.fr       */
+/*   Updated: 2017/03/25 15:30:49 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ unsigned	adapt_precision(t_flags *flags, size_t nb_len);
 size_t		ft_nbulen(unsigned long n, unsigned int base);
 size_t		ft_nblen(long n, unsigned int base);
 void		width_pad(int nb_len, int width, char padwith, char *sign);
-void		ft_putnstr(char *s, size_t max);
 void		print_base(uintmax_t nb, unsigned int base);
 int			print_count(size_t n_len, size_t pad_len, t_flags *f, uintmax_t nb);
 char		*get_str_to_print(char *hex, char specifier);
