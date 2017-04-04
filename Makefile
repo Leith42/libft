@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/04/04 12:14:16 by aazri            ###   ########.fr        #
+#    Updated: 2017/04/04 13:49:17 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,6 @@ SRC =	\
 		$(SRC_PATH)ft_lstadd.c \
 		$(SRC_PATH)ft_lstiter.c \
 		$(SRC_PATH)ft_lstmap.c \
-		$(SRC_PATH)ft_lstcount.c \
 
 EXTRA_SRC = \
 		$(EXTRA_PATH)ft_strndup.c \
@@ -92,6 +91,8 @@ EXTRA_SRC = \
 		$(EXTRA_PATH)ft_itoa_base.c \
 		$(EXTRA_PATH)ft_utoa_base.c \
 		$(EXTRA_PATH)ft_putnstr.c \
+		$(EXTRA_PATH)ft_lstrev.c \
+		$(EXTRA_PATH)ft_lstcount.c \
 
 GNL_SRC = \
 		$(GNL_PATH)get_next_line.c \

@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:49:53 by aazri             #+#    #+#             */
-/*   Updated: 2017/04/04 12:13:43 by aazri            ###   ########.fr       */
+/*   Updated: 2017/04/04 13:48:46 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void			ft_lstadd(t_list **alst, t_list *new_list);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t			ft_lstcount(t_list *lst);
+void			ft_lstrev(t_list **begin_list);
 
 /*
 ** Extras functions
