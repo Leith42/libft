@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/04/04 13:49:17 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/18 22:01:20 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,8 +120,9 @@ OBJ =	$(SRC:.c=.o) \
 		$(PRINTF_SRC:.c=.o) \
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "libft : compiled with success!"
 
 all: $(NAME)
 
