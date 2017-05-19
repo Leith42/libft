@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/18 22:01:20 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/19 18:59:01 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,122 +14,131 @@ NAME = libft.a
 CC = gcc
 INCLUDE = -I./include/
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
-SRC_PATH = ./src/
-EXTRA_PATH = $(SRC_PATH)extra/
-PRINTF_PATH = $(SRC_PATH)ft_printf/
-GNL_PATH = $(SRC_PATH)get_next_line/
+LIBFT_PATH = ./src/
+EXTRA_PATH = $(LIBFT_PATH)extra/
+PRINTF_PATH = $(LIBFT_PATH)ft_printf/
+GNL_PATH = $(LIBFT_PATH)get_next_line/
 RM = rm -f
 
-SRC =	\
-		$(SRC_PATH)ft_memset.c \
-		$(SRC_PATH)ft_bzero.c \
-		$(SRC_PATH)ft_memcpy.c \
-		$(SRC_PATH)ft_memccpy.c \
-		$(SRC_PATH)ft_memmove.c \
-		$(SRC_PATH)ft_memchr.c \
-		$(SRC_PATH)ft_memcmp.c \
-		$(SRC_PATH)ft_memalloc.c \
-		$(SRC_PATH)ft_memdel.c \
-		$(SRC_PATH)ft_strlen.c \
-		$(SRC_PATH)ft_strdup.c \
-		$(SRC_PATH)ft_strcpy.c \
-		$(SRC_PATH)ft_strncpy.c \
-		$(SRC_PATH)ft_strcat.c \
-		$(SRC_PATH)ft_strncat.c \
-		$(SRC_PATH)ft_strlcat.c \
-		$(SRC_PATH)ft_strchr.c \
-		$(SRC_PATH)ft_strrchr.c \
-		$(SRC_PATH)ft_strstr.c \
-		$(SRC_PATH)ft_strnstr.c \
-		$(SRC_PATH)ft_strcmp.c \
-		$(SRC_PATH)ft_strncmp.c \
-		$(SRC_PATH)ft_atoi.c \
-		$(SRC_PATH)ft_isalpha.c \
-		$(SRC_PATH)ft_isdigit.c \
-		$(SRC_PATH)ft_isalnum.c \
-		$(SRC_PATH)ft_isascii.c \
-		$(SRC_PATH)ft_isprint.c \
-		$(SRC_PATH)ft_toupper.c \
-		$(SRC_PATH)ft_tolower.c \
-		$(SRC_PATH)ft_strnew.c \
-		$(SRC_PATH)ft_strdel.c \
-		$(SRC_PATH)ft_strclr.c \
-		$(SRC_PATH)ft_striter.c \
-		$(SRC_PATH)ft_striteri.c \
-		$(SRC_PATH)ft_strmap.c \
-		$(SRC_PATH)ft_strmapi.c \
-		$(SRC_PATH)ft_strequ.c \
-		$(SRC_PATH)ft_strnequ.c \
-		$(SRC_PATH)ft_strsub.c \
-		$(SRC_PATH)ft_strjoin.c \
-		$(SRC_PATH)ft_strtrim.c \
-		$(SRC_PATH)ft_strsplit.c \
-		$(SRC_PATH)ft_putchar.c \
-		$(SRC_PATH)ft_putstr.c \
-		$(SRC_PATH)ft_putendl.c \
-		$(SRC_PATH)ft_putnbr.c \
-		$(SRC_PATH)ft_putchar_fd.c \
-		$(SRC_PATH)ft_putstr_fd.c \
-		$(SRC_PATH)ft_putendl_fd.c \
-		$(SRC_PATH)ft_putnbr_fd.c \
-		$(SRC_PATH)ft_itoa.c \
-		$(SRC_PATH)ft_lstnew.c \
-		$(SRC_PATH)ft_lstdelone.c \
-		$(SRC_PATH)ft_lstdel.c \
-		$(SRC_PATH)ft_lstadd.c \
-		$(SRC_PATH)ft_lstiter.c \
-		$(SRC_PATH)ft_lstmap.c \
+LIBFT_SRC =	\
+		ft_memset.c \
+		ft_bzero.c \
+		ft_memcpy.c \
+		ft_memccpy.c \
+		ft_memmove.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memalloc.c \
+		ft_memdel.c \
+		ft_strlen.c \
+		ft_strdup.c \
+		ft_strcpy.c \
+		ft_strncpy.c \
+		ft_strcat.c \
+		ft_strncat.c \
+		ft_strlcat.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strstr.c \
+		ft_strnstr.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
+		ft_atoi.c \
+		ft_isalpha.c \
+		ft_isdigit.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+		ft_tolower.c \
+		ft_strnew.c \
+		ft_strdel.c \
+		ft_strclr.c \
+		ft_striter.c \
+		ft_striteri.c \
+		ft_strmap.c \
+		ft_strmapi.c \
+		ft_strequ.c \
+		ft_strnequ.c \
+		ft_strsub.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_strsplit.c \
+		ft_putchar.c \
+		ft_putstr.c \
+		ft_putendl.c \
+		ft_putnbr.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_itoa.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
 EXTRA_SRC = \
-		$(EXTRA_PATH)ft_strndup.c \
-		$(EXTRA_PATH)ft_sqroot.c \
-		$(EXTRA_PATH)ft_strtolower.c \
-		$(EXTRA_PATH)ft_strtoupper.c \
-		$(EXTRA_PATH)ft_strrev.c \
-		$(EXTRA_PATH)ft_putlnbr.c \
-		$(EXTRA_PATH)ft_putulnbr.c \
-		$(EXTRA_PATH)ft_itoa_base.c \
-		$(EXTRA_PATH)ft_utoa_base.c \
-		$(EXTRA_PATH)ft_putnstr.c \
-		$(EXTRA_PATH)ft_lstrev.c \
-		$(EXTRA_PATH)ft_lstcount.c \
+		ft_strndup.c \
+		ft_sqroot.c \
+		ft_strtolower.c \
+		ft_strtoupper.c \
+		ft_strrev.c \
+		ft_putlnbr.c \
+		ft_putulnbr.c \
+		ft_itoa_base.c \
+		ft_utoa_base.c \
+		ft_putnstr.c \
+		ft_lstrev.c \
+		ft_lstcount.c \
 
 GNL_SRC = \
-		$(GNL_PATH)get_next_line.c \
+		get_next_line.c \
 
 PRINTF_SRC = \
-		$(PRINTF_PATH)ft_printf.c \
-		$(PRINTF_PATH)decimal_pad.c \
-		$(PRINTF_PATH)get_func_array.c \
-		$(PRINTF_PATH)get_str_to_print.c \
-		$(PRINTF_PATH)handle_char.c \
-		$(PRINTF_PATH)handle_decimal.c \
-		$(PRINTF_PATH)handle_hexadecimal.c \
-		$(PRINTF_PATH)handle_octal.c \
-		$(PRINTF_PATH)handle_string.c \
-		$(PRINTF_PATH)hex_pad.c \
-		$(PRINTF_PATH)length_specifier.c \
-		$(PRINTF_PATH)parsing_flags.c \
-		$(PRINTF_PATH)print_count.c \
-		$(PRINTF_PATH)utils.c \
-		$(PRINTF_PATH)utils_wchar.c \
+		ft_printf.c \
+		decimal_pad.c \
+		get_func_array.c \
+		get_str_to_print.c \
+		handle_char.c \
+		handle_decimal.c \
+		handle_hexadecimal.c \
+		handle_octal.c \
+		handle_string.c \
+		hex_pad.c \
+		length_specifier.c \
+		parsing_flags.c \
+		print_count.c \
+		utils.c \
+		utils_wchar.c \
 
-OBJ =	$(SRC:.c=.o) \
-		$(EXTRA_SRC:.c=.o) \
-		$(GNL_SRC:.c=.o) \
-		$(PRINTF_SRC:.c=.o) \
+LIBFT_OBJ =	$(LIBFT_SRC:.c=.o)
+EXTRA_OBJ = $(EXTRA_SRC:.c=.o)
+GNL_OBJ = $(GNL_SRC:.c=.o)
+PRINTF_OBJ = $(PRINTF_SRC:.c=.o)
 
-$(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
-	@echo "libft : compiled with success!"
+LIBFT = $(addprefix $(LIBFT_PATH), $(LIBFT_SRC))
+EXTRA = $(addprefix $(EXTRA_PATH), $(EXTRA_SRC))
+GNL = $(addprefix $(GNL_PATH), $(GNL_SRC))
+PRINTF = $(addprefix $(PRINTF_PATH), $(PRINTF_SRC))
 
 all: $(NAME)
 
+$(NAME): $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
+	@ar rc $(NAME) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
+	@ranlib $(NAME)
+	@echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m-OK-\033[0m"
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
+	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m-OK-\033[0m"
 
 fclean: clean
 	$(RM) $(NAME)
+	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning lib\t\033[0;32m-OK-\033[0m"
 
 re: fclean all
+
+.PHONY: all clean fclean re
