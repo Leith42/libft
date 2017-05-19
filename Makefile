@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/19 20:17:05 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/19 22:43:20 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,8 +143,8 @@ clean:
 	@$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
 	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
-fclean: clean
-	@$(RM) $(NAME)
+fclean:
+	@$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF) $(NAME)
 	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
