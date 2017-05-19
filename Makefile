@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/19 22:51:14 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/19 23:19:05 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -128,24 +128,24 @@ PRINTF = $(addprefix $(PRINTF_PATH), $(PRINTF_OBJ))
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
-	@ar rc $(NAME) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
-	@ranlib $(NAME)
-	@echo "  _      _____ ____  ______ _______"
-	@echo " | |    |_   _|  _ \|  ____|__   __|"
-	@echo " | |      | | | |_) | |__     | |"
-	@echo " | |      | | |  _ <|  __|    | |"
-	@echo " | |____ _| |_| |_) | |       | |"
-	@echo " |______|_____|____/|_|       |_|"
-	@echo " "
-	@echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
+	ar rc $(NAME) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
+	ranlib $(NAME)
+	echo "  _      _____ ____  ______ _______"
+	echo " | |    |_   _|  _ \|  ____|__   __|"
+	echo " | |      | | | |_) | |__     | |"
+	echo " | |      | | |  _ <|  __|    | |"
+	echo " | |____ _| |_| |_) | |       | |"
+	echo " |______|_____|____/|_|       |_|"
+	echo " "
+	echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
 
 clean:
-	@$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
-	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
+	$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
+	echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 fclean:
-	@$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF) $(NAME)
-	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
+	$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF) $(NAME)
+	echo "\033[1;34mLibft\t\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
 
