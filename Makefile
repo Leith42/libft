@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/19 22:43:20 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/19 22:48:28 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -137,7 +137,7 @@ $(NAME): $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
 	@echo "| |____ _| |_| |_) | |       | |"
 	@echo "|______|_____|____/|_|       |_|"
 	@echo " "
-	@echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m-OK-\033[0m"
+	@echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
 
 clean:
 	@$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
