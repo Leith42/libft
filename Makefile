@@ -6,12 +6,13 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/19 23:19:05 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/19 23:27:06 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = @gcc
+CC = gcc
+MAKEFLAGS = --silent
 INCLUDE = -I./include/
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 LIBFT_PATH = ./src/
