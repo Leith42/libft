@@ -6,12 +6,12 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/19 18:59:01 by aazri            ###   ########.fr        #
+#    Updated: 2017/05/19 20:17:05 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
+CC = @gcc
 INCLUDE = -I./include/
 CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 LIBFT_PATH = ./src/
@@ -93,6 +93,7 @@ EXTRA_SRC = \
 		ft_putnstr.c \
 		ft_lstrev.c \
 		ft_lstcount.c \
+		ft_atol.c \
 
 GNL_SRC = \
 		get_next_line.c \
@@ -119,25 +120,32 @@ EXTRA_OBJ = $(EXTRA_SRC:.c=.o)
 GNL_OBJ = $(GNL_SRC:.c=.o)
 PRINTF_OBJ = $(PRINTF_SRC:.c=.o)
 
-LIBFT = $(addprefix $(LIBFT_PATH), $(LIBFT_SRC))
-EXTRA = $(addprefix $(EXTRA_PATH), $(EXTRA_SRC))
-GNL = $(addprefix $(GNL_PATH), $(GNL_SRC))
-PRINTF = $(addprefix $(PRINTF_PATH), $(PRINTF_SRC))
+LIBFT = $(addprefix $(LIBFT_PATH), $(LIBFT_OBJ))
+EXTRA = $(addprefix $(EXTRA_PATH), $(EXTRA_OBJ))
+GNL = $(addprefix $(GNL_PATH), $(GNL_OBJ))
+PRINTF = $(addprefix $(PRINTF_PATH), $(PRINTF_OBJ))
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
 	@ar rc $(NAME) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
 	@ranlib $(NAME)
+	@echo " _      _____ ____  ______ _______"
+	@echo "| |    |_   _|  _ \|  ____|__   __|"
+	@echo "| |      | | | |_) | |__     | |"
+	@echo "| |      | | |  _ <|  __|    | |"
+	@echo "| |____ _| |_| |_) | |       | |"
+	@echo "|______|_____|____/|_|       |_|"
+	@echo " "
 	@echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m-OK-\033[0m"
 
 clean:
-	$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
-	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m-OK-\033[0m"
+	@$(RM) $(LIBFT) $(EXTRA) $(GNL) $(PRINTF)
+	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
-	$(RM) $(NAME)
-	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning lib\t\033[0;32m-OK-\033[0m"
+	@$(RM) $(NAME)
+	@echo "\033[1;34mLibft\t\t\033[1;33mCleaning lib\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
 
