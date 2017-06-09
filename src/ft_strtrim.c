@@ -43,9 +43,8 @@ char		*ft_strtrim(char const *s)
 		while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 			i++;
 		if (i == len + 1)
-			return ("");
-		buff = malloc(sizeof(char) * (len - i + 1));
-		if (!buff)
+			return (ft_strdup(""));
+		if (!(buff = malloc(sizeof(char) * (len - i + 1))))
 			return (NULL);
 		while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
 			len--;

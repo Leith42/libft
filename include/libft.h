@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:49:53 by aazri             #+#    #+#             */
-/*   Updated: 2017/05/19 20:37:18 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/09 16:20:41 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 # define ERROR -1
 # define OK TRUE
 
-/* Basic linked list
-**
+/*
+**	Basic linked list
 */
 typedef struct	s_list
 {
