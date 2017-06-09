@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/05/19 23:27:06 by aazri            ###   ########.fr        #
+#    Updated: 2017/06/09 16:39:39 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,6 +115,7 @@ PRINTF_SRC = \
 		print_count.c \
 		utils.c \
 		utils_wchar.c \
+		handle_color.c \
 
 LIBFT_OBJ =	$(LIBFT_SRC:.c=.o)
 EXTRA_OBJ = $(EXTRA_SRC:.c=.o)
