@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:49:53 by aazri             #+#    #+#             */
-/*   Updated: 2017/06/09 16:20:41 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/11 15:19:55 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@
 # define ABS(x) ((x < 0)) ? -(x) : (x)
 # define MIN(x, y) ((x < y)) ? (x) : (y)
 # define MAX(x, y) ((x > y)) ? (x) : (y)
-# define TRUE 1
-# define FALSE 0
 # define ERROR -1
-# define OK TRUE
+# define OK true
 
 /*
 **	Basic linked list
