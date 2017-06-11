@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 17:49:53 by aazri             #+#    #+#             */
-/*   Updated: 2017/06/11 15:19:55 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/11 15:27:25 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,5 @@ char			*ft_itoa_base(intmax_t n, unsigned int base);
 char			*ft_utoa_base(uintmax_t n, unsigned int base);
 void			ft_putnstr(char const *str, size_t len);
 long			ft_atol(const char *str, unsigned int base);
-
+void			ft_cls(void);
 #endif

@@ -6,7 +6,7 @@
 #    By: aazri <aazri@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/17 17:35:54 by aazri             #+#    #+#              #
-#    Updated: 2017/06/09 16:39:39 by aazri            ###   ########.fr        #
+#    Updated: 2017/06/11 15:27:06 by aazri            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,6 +95,7 @@ EXTRA_SRC = \
 		ft_lstrev.c \
 		ft_lstcount.c \
 		ft_atol.c \
+		ft_cls.c \
 
 GNL_SRC = \
 		get_next_line.c \
