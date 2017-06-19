@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/04 12:10:25 by aazri             #+#    #+#             */
-/*   Updated: 2017/04/04 12:13:07 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/19 17:48:35 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_lstcount(t_list *lst)
+size_t	ft_lstcount(t_list *lst)
 {
 	size_t i;
 	t_list *tmp;

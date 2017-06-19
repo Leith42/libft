@@ -6,18 +6,18 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 18:28:01 by aazri             #+#    #+#             */
-/*   Updated: 2017/01/26 18:33:08 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/19 17:51:55 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtolower(char *str)
+char	*ft_strtolower(char *str)
 {
 	size_t i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;

@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 18:08:31 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/24 14:52:15 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/19 17:48:42 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_itoa_base(intmax_t n, unsigned int base)
 {
-	char	buff[24];
-	char	*str;
-	int		i;
+	char		buff[24];
+	char		*str;
+	int			i;
 	intmax_t	n_tmp;
 
 	i = 0;

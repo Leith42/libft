@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:23:09 by aazri             #+#    #+#             */
-/*   Updated: 2017/04/18 17:46:36 by aazri            ###   ########.fr       */
+/*   Updated: 2017/06/19 17:48:21 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 intmax_t	ft_atol(const char *str, unsigned int base)
 {
-	intmax_t result;
-	bool negative;
+	intmax_t	result;
+	bool		negative;
 
 	result = 0;
 	negative = 0;
