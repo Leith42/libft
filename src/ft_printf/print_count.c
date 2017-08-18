@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 15:23:14 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/17 16:15:50 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:59 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	hex_print_count(size_t nb_len, size_t pad_len, t_flags *flags)
+int	hex_print_count(size_t nb_len, size_t pad_len, t_pf_flags *flags)
 {
 	if (flags->got_width == true || flags->got_precision == true)
 	{
@@ -26,7 +26,7 @@ int	hex_print_count(size_t nb_len, size_t pad_len, t_flags *flags)
 	return (nb_len + ft_strlen(flags->sign));
 }
 
-int	print_count(size_t nb_len, size_t pad_len, t_flags *flags, uintmax_t nb)
+int	print_count(size_t nb_len, size_t pad_len, t_pf_flags *flags, uintmax_t nb)
 {
 	char *prefix;
 

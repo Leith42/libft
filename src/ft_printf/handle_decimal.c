@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 14:43:44 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/17 16:03:07 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:38 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned		adapt_width(t_flags *f, size_t preci, uintmax_t n, size_t *nlen)
+unsigned		adapt_width(t_pf_flags *f, size_t preci, uintmax_t n, size_t *nlen)
 {
 	unsigned int width;
 
@@ -26,7 +26,7 @@ unsigned		adapt_width(t_flags *f, size_t preci, uintmax_t n, size_t *nlen)
 	return (width);
 }
 
-unsigned int	adapt_precision(t_flags *flags, size_t nb_len)
+unsigned int	adapt_precision(t_pf_flags *flags, size_t nb_len)
 {
 	unsigned int precision;
 
@@ -42,7 +42,7 @@ unsigned int	adapt_precision(t_flags *flags, size_t nb_len)
 	return (precision);
 }
 
-size_t			handle_integer(uintmax_t nb, t_flags *flags)
+size_t			handle_integer(uintmax_t nb, t_pf_flags *flags)
 {
 	size_t nb_len;
 	size_t pad_len;
@@ -61,7 +61,7 @@ size_t			handle_integer(uintmax_t nb, t_flags *flags)
 	return (print_count(nb_len, pad_len, flags, nb));
 }
 
-int				spec_d(t_format *format, va_list arguments, t_flags *flags)
+int				spec_d(t_format *format, va_list arguments, t_pf_flags *flags)
 {
 	intmax_t	integer;
 
@@ -82,7 +82,7 @@ int				spec_d(t_format *format, va_list arguments, t_flags *flags)
 	return (OK);
 }
 
-int				spec_u(t_format *format, va_list arguments, t_flags *flags)
+int				spec_u(t_format *format, va_list arguments, t_pf_flags *flags)
 {
 	char		specifier;
 	uintmax_t	u_integer;

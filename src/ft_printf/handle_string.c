@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 15:07:14 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/17 16:03:17 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:48 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	handle_wstring(t_format *format, va_list arguments, t_flags *flags)
+void	handle_wstring(t_format *format, va_list arguments, t_pf_flags *flags)
 {
 	wchar_t	*wstring;
 	size_t	len;
@@ -39,7 +39,7 @@ void	handle_wstring(t_format *format, va_list arguments, t_flags *flags)
 	format->pos++;
 }
 
-int		spec_s(t_format *format, va_list arguments, t_flags *flags)
+int		spec_s(t_format *format, va_list arguments, t_pf_flags *flags)
 {
 	char	specifier;
 	char	*s;

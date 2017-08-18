@@ -6,20 +6,20 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/15 15:52:32 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/17 16:03:15 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:44 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*assign_prefix(t_flags *flags)
+static char	*assign_prefix(t_pf_flags *flags)
 {
 	if (flags->force_prefix == true && flags->precision == 0)
 		return ("0");
 	return (NULL);
 }
 
-int			spec_o(t_format *format, va_list arguments, t_flags *flags)
+int			spec_o(t_format *format, va_list arguments, t_pf_flags *flags)
 {
 	uintmax_t	octal;
 

@@ -6,15 +6,15 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 13:18:51 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/20 20:07:12 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:56 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		handle_flags(t_format *format, va_list arguments, t_flags *flags)
+int		handle_flags(t_format *format, va_list arguments, t_pf_flags *flags)
 {
-	ft_bzero(flags, sizeof(t_flags));
+	ft_bzero(flags, sizeof(t_pf_flags));
 	parse_flags(format, flags);
 	parse_width(format, arguments, flags);
 	parse_precision(format, arguments, flags);
@@ -22,7 +22,7 @@ int		handle_flags(t_format *format, va_list arguments, t_flags *flags)
 	return (OK);
 }
 
-void	parse_flags(t_format *f, t_flags *flags)
+void	parse_flags(t_format *f, t_pf_flags *flags)
 {
 	if (f->string[f->pos] == '#' || f->string[f->pos] == '0'
 	|| f->string[f->pos] == '-' || f->string[f->pos] == '+'
@@ -45,7 +45,7 @@ void	parse_flags(t_format *f, t_flags *flags)
 	}
 }
 
-void	parse_width(t_format *f, va_list list, t_flags *flags)
+void	parse_width(t_format *f, va_list list, t_pf_flags *flags)
 {
 	int	width_from_arg;
 
@@ -72,7 +72,7 @@ void	parse_width(t_format *f, va_list list, t_flags *flags)
 	}
 }
 
-void	parse_precision(t_format *f, va_list list, t_flags *fl)
+void	parse_precision(t_format *f, va_list list, t_pf_flags *fl)
 {
 	int prec_from_arg;
 
@@ -100,7 +100,7 @@ void	parse_precision(t_format *f, va_list list, t_flags *fl)
 	}
 }
 
-void	parse_length(t_format *f, t_flags *flags)
+void	parse_length(t_format *f, t_pf_flags *flags)
 {
 	if (f->string[f->pos] == 'h' && f->string[f->pos + 1] == 'h')
 	{

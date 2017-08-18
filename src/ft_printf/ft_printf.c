@@ -6,13 +6,13 @@
 /*   By: leith <leith@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 16:26:24 by leith             #+#    #+#             */
-/*   Updated: 2017/06/07 16:21:37 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:21 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	handle_specifier(t_format *format, va_list args, t_flags *flags)
+static int	handle_specifier(t_format *format, va_list args, t_pf_flags *flags)
 {
 	char	spec;
 	size_t	i;
@@ -48,7 +48,7 @@ static void	print_char(t_format *format)
 	format->written++;
 }
 
-static int	browser(t_format *format, va_list arguments, t_flags *flags)
+static int	browser(t_format *format, va_list arguments, t_pf_flags *flags)
 {
 	while (format->string[format->pos])
 	{
@@ -77,7 +77,7 @@ int			ft_printf(const char *string, ...)
 {
 	va_list		arguments;
 	t_format	format;
-	t_flags		flags;
+	t_pf_flags	flags;
 
 	ft_bzero(&format, sizeof(format));
 	format.string = string;

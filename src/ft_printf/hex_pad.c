@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 14:03:05 by aazri             #+#    #+#             */
-/*   Updated: 2017/06/07 16:27:24 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:24:52 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void				hex_left_double_pad(size_t hex_len, t_flags *flags, char *h)
+void				hex_left_double_pad(size_t hex_len, t_pf_flags *flags, char *h)
 {
 	unsigned int	precision;
 	unsigned int	width;
@@ -31,7 +31,7 @@ void				hex_left_double_pad(size_t hex_len, t_flags *flags, char *h)
 	ft_putstr(h);
 }
 
-static void			hex_right_pad(size_t hex_len, t_flags *flags, char *hex)
+static void			hex_right_pad(size_t hex_len, t_pf_flags *flags, char *hex)
 {
 	char			pad_with;
 	unsigned int	prefix_len;
@@ -46,7 +46,7 @@ static void			hex_right_pad(size_t hex_len, t_flags *flags, char *hex)
 	width_pad(hex_len, flags->width - prefix_len, pad_with, 0);
 }
 
-int					hex_double_pad(size_t hex_len, t_flags *flags, char *print)
+int					hex_double_pad(size_t hex_len, t_pf_flags *flags, char *print)
 {
 	if (flags->width > flags->precision)
 	{
@@ -67,7 +67,7 @@ int					hex_double_pad(size_t hex_len, t_flags *flags, char *print)
 	return (OK);
 }
 
-static void			hex_left_pad(size_t hex_len, t_flags *flags, char *hex)
+static void			hex_left_pad(size_t hex_len, t_pf_flags *flags, char *hex)
 {
 	size_t prefix_len;
 
@@ -92,7 +92,7 @@ static void			hex_left_pad(size_t hex_len, t_flags *flags, char *hex)
 	}
 }
 
-void				hex_simple_pad(size_t hex_len, t_flags *flags, char *hex)
+void				hex_simple_pad(size_t hex_len, t_pf_flags *flags, char *hex)
 {
 	if (flags->got_width == true)
 	{

@@ -6,13 +6,13 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 14:53:29 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/17 16:15:57 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:25:19 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	right_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
+static void	right_pad(size_t nb_len, t_pf_flags *flags, uintmax_t nb)
 {
 	size_t width;
 	size_t precision;
@@ -24,7 +24,7 @@ static void	right_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
 	width_pad(nb_len, width, ' ', 0);
 }
 
-static void	left_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
+static void	left_pad(size_t nb_len, t_pf_flags *flags, uintmax_t nb)
 {
 	unsigned int	width;
 	unsigned int	precision;
@@ -51,7 +51,7 @@ static void	left_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
 	}
 }
 
-static void	double_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
+static void	double_pad(size_t nb_len, t_pf_flags *flags, uintmax_t nb)
 {
 	if (flags->width > flags->precision)
 	{
@@ -71,7 +71,7 @@ static void	double_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
 	}
 }
 
-static void	simple_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
+static void	simple_pad(size_t nb_len, t_pf_flags *flags, uintmax_t nb)
 {
 	if (flags->got_width == true)
 	{
@@ -98,7 +98,7 @@ static void	simple_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
 	}
 }
 
-void		handle_pad(size_t nb_len, t_flags *flags, uintmax_t nb)
+void		handle_pad(size_t nb_len, t_pf_flags *flags, uintmax_t nb)
 {
 	if (flags->got_width && flags->got_precision)
 	{

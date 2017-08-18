@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 16:40:04 by aazri             #+#    #+#             */
-/*   Updated: 2017/06/09 16:46:19 by aazri            ###   ########.fr       */
+/*   Updated: 2017/08/18 17:23:07 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 
-typedef struct	s_flags
+typedef struct	s_pf_flags
 {
 	bool		force_prefix;
 	bool		pad_zeroes;
@@ -37,7 +37,7 @@ typedef struct	s_flags
 		j,
 		z
 	}			length;
-}				t_flags;
+}				t_pf_flags;
 
 typedef struct	s_format
 {
@@ -49,7 +49,7 @@ typedef struct	s_format
 
 typedef struct	s_func
 {
-	int			(*ptrfunc)(t_format *, va_list, t_flags *);
+	int			(*ptrfunc)(t_format *, va_list, t_pf_flags *);
 	char		key;
 }				t_func;
 
