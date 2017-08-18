@@ -25,9 +25,6 @@
 /*
 ** MACROS
 */
-# define ABS(x) ((x < 0)) ? -(x) : (x)
-# define MIN(x, y) ((x < y)) ? (x) : (y)
-# define MAX(x, y) ((x > y)) ? (x) : (y)
 # define BASE_OCTAL 8
 # define BASE_DECIMAL 10
 # define BASE_HEXADECIMAL 16
