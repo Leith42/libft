@@ -26,7 +26,7 @@ char	*ft_utoa_base(uintmax_t n, unsigned int base)
 		buff[i++] = n_tmp % base + '0';
 		n_tmp = n_tmp / base;
 	}
-	if (!(str = ft_memalloc(i + 1)))
+	if (!(str = ft_memalloc(i + 2)))
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';
