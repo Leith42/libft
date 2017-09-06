@@ -12,29 +12,24 @@
 
 #include "libft.h"
 
-char	*ft_itoa_base(intmax_t n, unsigned int base)
+char	*ft_itoa_base(uintmax_t nb, unsigned int base)
 {
-	char		buff[24];
-	char		*str;
-	int			i;
-	intmax_t	n_tmp;
+	char		*tmp;
+	char		*ret;
+	uintmax_t	nb_cpy;
 
-	i = 0;
-	n_tmp = n;
-	if (n < 0)
-		n_tmp = -n;
-	while (n_tmp)
+	nb_cpy = (uintmax_t)(nb < 0) ? nb * -1 : nb;
+	if ((ret = ft_utoa_base(nb_cpy, base)) != NULL)
 	{
-		buff[i++] = n_tmp % base + '0';
-		n_tmp = n_tmp / base;
+		if (nb < 0 && base == BASE_DECIMAL)
+		{
+			if ((tmp = ft_strjoin("-", ret)) == NULL)
+			{
+				return (NULL);
+			}
+			ft_memdel((void**)&ret);
+			ret = tmp;
+		}
 	}
-	if (n < 0)
-		buff[i++] = '-';
-	if (!(str = ft_memalloc(i + 1)))
-		return (NULL);
-	if (n == 0)
-		str[0] = '0';
-	while (--i >= 0)
-		str[n_tmp++] = buff[i];
-	return (str);
+	return (ret);
 }
