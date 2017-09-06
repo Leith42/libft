@@ -12,25 +12,28 @@
 
 #include "libft.h"
 
-char	*ft_utoa_base(uintmax_t n, unsigned int base)
+char	*ft_utoa_base(uintmax_t nb, unsigned int base)
 {
-	char		buff[24];
-	char		*str;
-	int			i;
-	uintmax_t	n_tmp;
+	char						*ret;
+	static unsigned int			loop;
+	static unsigned int			i;
+	unsigned long long int		mem;
 
-	i = 0;
-	n_tmp = n;
-	while (n_tmp)
-	{
-		buff[i++] = n_tmp % base + '0';
-		n_tmp = n_tmp / base;
-	}
-	if (!(str = ft_memalloc(i + 1)))
+	if (base < 2 || base > 36)
 		return (NULL);
-	if (n == 0)
-		str[0] = '0';
-	while (--i >= 0)
-		str[n_tmp++] = buff[i];
-	return (str);
+	if (nb == 0)
+	{
+		if ((ret = ft_memalloc(loop > 0 ? loop + 1 : 2)) == NULL)
+			return (NULL);
+		if (loop == 0)
+			ret[0] = '0';
+		loop = 0;
+		i = 0;
+		return (ret);
+	}
+	loop++;
+	mem = nb % base;
+	ret = ft_utoa_base(nb / base, base);
+	ret[i++] = (mem < 10) ? (char)mem + '0' : (char)mem - 10 + 'a';
+	return (ret);
 }
