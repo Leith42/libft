@@ -18,7 +18,7 @@ char	*ft_itoa_base(intmax_t nb, unsigned int base)
 	char		*ret;
 	uintmax_t	nb_cpy;
 
-	nb_cpy = (uintmax_t)(nb < 0) ? nb * -1 : nb;
+	nb_cpy = (intmax_t)(nb < 0) ? nb * -1 : nb;
 	if ((ret = ft_utoa_base(nb_cpy, base)) != NULL)
 	{
 		if (nb < 0 && base == BASE_DECIMAL)
