@@ -49,7 +49,7 @@ size_t	ft_nblen(intmax_t n, unsigned int base)
 
 	if ((str = ft_itoa_base(n, base)) == NULL)
 		return (ERROR);
-	len = ft_strlen(str) + 1;
+	len = ft_strlen(str);
 	free(str);
 	return (len);
 }
@@ -61,7 +61,7 @@ size_t	ft_nbulen(uintmax_t n, unsigned int base)
 
 	if ((str = ft_utoa_base(n, base)) == NULL)
 		return (ERROR);
-	len = ft_strlen(str) + 1;
+	len = ft_strlen(str);
 	free(str);
 	return (len);
 }
