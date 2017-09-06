@@ -14,10 +14,10 @@
 
 char	*ft_utoa_base(uintmax_t nb, unsigned int base)
 {
-	char						*ret;
-	static unsigned int			loop;
-	static unsigned int			i;
-	unsigned long long int		mem;
+	char			*ret;
+	static unsigned int	loop;
+	static unsigned int	i;
+	uintmax_t		mem;
 
 	if (base < 2 || base > 36)
 		return (NULL);
