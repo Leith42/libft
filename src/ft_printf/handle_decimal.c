@@ -47,7 +47,7 @@ size_t			handle_integer(uintmax_t nb, t_pf_flags *flags)
 	size_t nb_len;
 	size_t pad_len;
 
-	nb_len = ft_nbulen(nb, flags->base);
+	nb_len = ft_nbulen(nb, flags->base) + 1;
 	pad_len = MAX(flags->width, flags->precision);
 	if (flags->base == BASE_OCTAL && nb == 0 && flags->sign)
 	{
