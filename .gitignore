@@ -38,4 +38,8 @@ auteur
 ehthumbs.db
 Thumbs.db
 
+# CLion files #
+######################
 .idea
+CMakeLists.txt
+cmake-build-debug/

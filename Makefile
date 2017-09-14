@@ -96,6 +96,8 @@ EXTRA_SRC = \
 		ft_lstcount.c \
 		ft_atol.c \
 		ft_cls.c \
+		ft_lstsort.c \
+		ft_lstcmp.c \
 
 GNL_SRC = \
 		get_next_line.c \

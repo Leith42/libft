@@ -38,7 +38,7 @@ typedef struct	s_list
 }				t_list;
 
 /*
-** Some LibC functions
+** Some standard functions (or not...)
 */
 void			ft_bzero(void *ptr, size_t n);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
@@ -104,6 +104,9 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t			ft_lstcount(t_list *lst);
 void			ft_lstrev(t_list **begin_list);
+void			ft_lstsort(t_list **headref, int (*cmp)(t_list *a, t_list *b));
+int				ft_lexic_cmp(t_list *a, t_list *b);
+int				ft_rlexic_cmp(t_list *a, t_list *b);
 
 /*
 ** Extras functions
@@ -120,4 +123,5 @@ char			*ft_utoa_base(uintmax_t n, unsigned int base);
 void			ft_putnstr(char const *str, size_t len);
 long			ft_atol(const char *str, unsigned int base);
 void			ft_cls(void);
+
 #endif
