@@ -44,7 +44,7 @@ char		*ft_strtrim(char const *s)
 			i++;
 		if (i == len + 1)
 			return (ft_strdup(""));
-		if (!(buff = malloc(sizeof(char) * (len - i + 1))))
+		if (!(buff = ft_memalloc(sizeof(char) * (len - i + 1) + 1)))
 			return (NULL);
 		while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
 			len--;
