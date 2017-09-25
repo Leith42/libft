@@ -6,7 +6,7 @@
 /*   By: leith <leith@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 17:22:19 by leith             #+#    #+#             */
-/*   Updated: 2017/08/18 17:23:26 by aazri            ###   ########.fr       */
+/*   Updated: 2017/09/25 11:32:02 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int			valid_format(t_format format);
 /*
 ** Parsing
 */
-int			handle_flags(t_format *format, va_list arguments, t_pf_flags *flags);
+int			handle_flags(t_format *format, va_list arguments, t_pf_flags *f);
 void		parse_flags(t_format *s, t_pf_flags *flags);
 void		parse_width(t_format *f, va_list list, t_pf_flags *flags);
 void		parse_precision(t_format *f, va_list list, t_pf_flags *flags);
@@ -55,13 +55,13 @@ void		parse_length(t_format *f, t_pf_flags *flags);
 /*
 ** Utils
 */
-unsigned	adapt_width(t_pf_flags *f, size_t preci, uintmax_t nb, size_t *nb_len);
+unsigned	adapt_width(t_pf_flags *f, size_t p, uintmax_t nb, size_t *nb_len);
 unsigned	adapt_precision(t_pf_flags *flags, size_t nb_len);
 size_t		ft_nbulen(unsigned long n, unsigned int base);
 size_t		ft_nblen(long n, unsigned int base);
 void		width_pad(size_t nb_len, size_t width, char padwith, char *sign);
 void		print_base(uintmax_t nb, unsigned int base);
-int			print_count(size_t n_len, size_t pad_len, t_pf_flags *f, uintmax_t nb);
+int			print_count(size_t l, size_t pad_len, t_pf_flags *f, uintmax_t nb);
 char		*get_str_to_print(char *hex, char specifier);
 
 /*

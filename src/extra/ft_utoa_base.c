@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:30:17 by aazri             #+#    #+#             */
-/*   Updated: 2017/03/24 14:52:13 by aazri            ###   ########.fr       */
+/*   Updated: 2017/09/25 11:30:01 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_utoa_base(uintmax_t nb, unsigned int base)
 {
-	char			*ret;
+	char				*ret;
 	static unsigned int	loop;
 	static unsigned int	i;
-	uintmax_t		mem;
+	uintmax_t			mem;
 
 	if (base < 2 || base > 36)
 		return (NULL);
