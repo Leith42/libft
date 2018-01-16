@@ -6,27 +6,27 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 14:03:05 by aazri             #+#    #+#             */
-/*   Updated: 2017/08/18 17:24:52 by aazri            ###   ########.fr       */
+/*   Updated: 2017/09/25 11:28:31 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void				hex_left_double_pad(size_t hex_len, t_pf_flags *flags, char *h)
+void				hex_left_double_pad(size_t hex_len, t_pf_flags *f, char *h)
 {
 	unsigned int	precision;
 	unsigned int	width;
 	bool			zero;
 
 	zero = h[0] == 0x30 && h[1] == '\0' ? 0 : 1;
-	precision = adapt_precision(flags, hex_len);
-	width = adapt_width(flags, precision, zero, &hex_len);
+	precision = adapt_precision(f, hex_len);
+	width = adapt_width(f, precision, zero, &hex_len);
 	if (precision == 0 && zero == 0)
 	{
 		h = NULL;
 		hex_len = 0;
 	}
-	width_pad(hex_len, width, ' ', flags->sign);
+	width_pad(hex_len, width, ' ', f->sign);
 	width_pad(0, precision, '0', 0);
 	ft_putstr(h);
 }
@@ -46,22 +46,22 @@ static void			hex_right_pad(size_t hex_len, t_pf_flags *flags, char *hex)
 	width_pad(hex_len, flags->width - prefix_len, pad_with, 0);
 }
 
-int					hex_double_pad(size_t hex_len, t_pf_flags *flags, char *print)
+int					hex_double_pad(size_t hex_len, t_pf_flags *f, char *print)
 {
-	if (flags->width > flags->precision)
+	if (f->width > f->precision)
 	{
-		if (flags->right_pad == true)
+		if (f->right_pad == true)
 		{
-			hex_right_pad(hex_len, flags, print);
+			hex_right_pad(hex_len, f, print);
 		}
 		else
 		{
-			hex_left_double_pad(hex_len, flags, print);
+			hex_left_double_pad(hex_len, f, print);
 		}
 	}
 	else
 	{
-		width_pad(hex_len, flags->precision, '0', flags->sign);
+		width_pad(hex_len, f->precision, '0', f->sign);
 		ft_putstr(print);
 	}
 	return (OK);

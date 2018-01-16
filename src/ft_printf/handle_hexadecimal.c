@@ -6,7 +6,7 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/17 14:51:24 by aazri             #+#    #+#             */
-/*   Updated: 2017/08/18 17:24:41 by aazri            ###   ########.fr       */
+/*   Updated: 2017/09/25 11:28:49 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static size_t	handle_hex(char *hex, t_pf_flags *flags, char spec)
 	return (print_count(hex_len, pad_len, flags, 0));
 }
 
-static char		*assign_prefix(char specifier, t_pf_flags *flags, uintmax_t u_hex)
+static char		*assign_prefix(char specifier, t_pf_flags *f, uintmax_t u_hex)
 {
-	if ((flags->force_prefix == true) || specifier == 'p')
+	if ((f->force_prefix == true) || specifier == 'p')
 	{
 		if ((specifier == 'x' && u_hex != 0) || (specifier == 'p'))
 			return ("0x");

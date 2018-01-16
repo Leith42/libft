@@ -6,20 +6,20 @@
 /*   By: aazri <aazri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/08 14:43:44 by aazri             #+#    #+#             */
-/*   Updated: 2017/08/18 17:24:38 by aazri            ###   ########.fr       */
+/*   Updated: 2017/09/25 11:29:23 by aazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned		adapt_width(t_pf_flags *f, size_t preci, uintmax_t n, size_t *nlen)
+unsigned		adapt_width(t_pf_flags *f, size_t p, uintmax_t n, size_t *nlen)
 {
 	unsigned int width;
 
 	width = f->width;
-	width -= preci;
+	width -= p;
 	width -= ft_strlen(f->sign);
-	if (n == 0 && f->got_precision == true && preci == 0)
+	if (n == 0 && f->got_precision == true && p == 0)
 	{
 		*nlen = 0;
 	}
