@@ -25,7 +25,6 @@
 # define MIN(x, y) ((x < y)) ? (x) : (y)
 # define MAX(x, y) ((x > y)) ? (x) : (y)
 # define ERROR -1
-# define OK true
 
 /*
 **	Basic linked list
@@ -121,7 +120,7 @@ void			ft_putlnbr(long nb);
 char			*ft_itoa_base(intmax_t n, unsigned int base);
 char			*ft_utoa_base(uintmax_t n, unsigned int base);
 void			ft_putnstr(char const *str, size_t len);
-long			ft_atol(const char *str, unsigned int base);
+intmax_t		ft_atol(const char *str, unsigned int base);
 void			ft_cls(void);
 
 #endif

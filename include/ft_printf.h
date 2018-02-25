@@ -57,8 +57,8 @@ void		parse_length(t_format *f, t_pf_flags *flags);
 */
 unsigned	adapt_width(t_pf_flags *f, size_t p, uintmax_t nb, size_t *nb_len);
 unsigned	adapt_precision(t_pf_flags *flags, size_t nb_len);
-size_t		ft_nbulen(unsigned long n, unsigned int base);
-size_t		ft_nblen(long n, unsigned int base);
+size_t		ft_nbulen(uintmax_t n, unsigned int base);
+size_t		ft_nblen(intmax_t n, unsigned int base);
 void		width_pad(size_t nb_len, size_t width, char padwith, char *sign);
 void		print_base(uintmax_t nb, unsigned int base);
 int			print_count(size_t l, size_t pad_len, t_pf_flags *f, uintmax_t nb);
