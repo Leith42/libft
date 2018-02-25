@@ -25,6 +25,7 @@
 # define MIN(x, y) ((x < y)) ? (x) : (y)
 # define MAX(x, y) ((x > y)) ? (x) : (y)
 # define ERROR -1
+# define OK true
 
 /*
 **	Basic linked list
